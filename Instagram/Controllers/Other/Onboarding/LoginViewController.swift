@@ -200,9 +200,9 @@ class LoginViewController: UIViewController {
         passwordField.resignFirstResponder()
         
         // Check that we have text
-//        guard let usernameEmail == usernameEmailField.text, !usernameEmail.isEmpty, let password == passwordField.text, !password.isEmpty, password.count >= 8 else {
-//            return
-//        }
+        guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty, let password = passwordField.text, !password.isEmpty, password.count >= 8 else {
+            return
+        }
         
         // Log in functionality
         
