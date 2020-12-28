@@ -33,6 +33,10 @@
 		EC24603925987E480057D2EF /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24603825987E480057D2EF /* PostEditorViewController.swift */; };
 		EC24603E25987E770057D2EF /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24603D25987E770057D2EF /* PublishPostViewController.swift */; };
 		EC8F79962598A97C0003B24E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC8F79952598A97C0003B24E /* GoogleService-Info.plist */; };
+		EC8F799F25995ABF0003B24E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F799E25995ABF0003B24E /* DatabaseManager.swift */; };
+		EC8F79A425995C230003B24E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79A325995C230003B24E /* AuthManager.swift */; };
+		EC8F79A925995C860003B24E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79A825995C860003B24E /* StorageManager.swift */; };
+		EC8F79C6259963550003B24E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79C5259963550003B24E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		EC24603825987E480057D2EF /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		EC24603D25987E770057D2EF /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		EC8F79952598A97C0003B24E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EC8F799E25995ABF0003B24E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		EC8F79A325995C230003B24E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		EC8F79A825995C860003B24E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		EC8F79C5259963550003B24E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +235,10 @@
 				EC8F79952598A97C0003B24E /* GoogleService-Info.plist */,
 				EC245FB825987AB80057D2EF /* AppDelegate.swift */,
 				EC245FBA25987AB80057D2EF /* SceneDelegate.swift */,
+				EC8F799E25995ABF0003B24E /* DatabaseManager.swift */,
+				EC8F79A325995C230003B24E /* AuthManager.swift */,
+				EC8F79A825995C860003B24E /* StorageManager.swift */,
+				EC8F79C5259963550003B24E /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -256,14 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				EC24600C25987CF70057D2EF /* Onboarding */,
-				EC24601A25987D650057D2EF /* PostViewController.swift */,
-				EC24601F25987D990057D2EF /* EditProfileViewController.swift */,
-				EC24602425987DC00057D2EF /* SettingViewController.swift */,
-				EC24602925987DE70057D2EF /* ListViewController.swift */,
-				EC24602E25987E030057D2EF /* SearchViewController.swift */,
-				EC24603325987E140057D2EF /* SearchResultViewController.swift */,
-				EC24603825987E480057D2EF /* PostEditorViewController.swift */,
-				EC24603D25987E770057D2EF /* PublishPostViewController.swift */,
+				EC8F799A259959D80003B24E /* General */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -275,6 +280,21 @@
 				EC24601525987D320057D2EF /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EC8F799A259959D80003B24E /* General */ = {
+			isa = PBXGroup;
+			children = (
+				EC24601A25987D650057D2EF /* PostViewController.swift */,
+				EC24601F25987D990057D2EF /* EditProfileViewController.swift */,
+				EC24602425987DC00057D2EF /* SettingViewController.swift */,
+				EC24602925987DE70057D2EF /* ListViewController.swift */,
+				EC24602E25987E030057D2EF /* SearchViewController.swift */,
+				EC24603325987E140057D2EF /* SearchResultViewController.swift */,
+				EC24603825987E480057D2EF /* PostEditorViewController.swift */,
+				EC24603D25987E770057D2EF /* PublishPostViewController.swift */,
+			);
+			name = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,12 +543,16 @@
 				EC245FFE25987C760057D2EF /* NotificationViewController.swift in Sources */,
 				EC24601625987D320057D2EF /* RegistrationViewController.swift in Sources */,
 				EC24603925987E480057D2EF /* PostEditorViewController.swift in Sources */,
+				EC8F79A925995C860003B24E /* StorageManager.swift in Sources */,
 				EC24601B25987D650057D2EF /* PostViewController.swift in Sources */,
+				EC8F799F25995ABF0003B24E /* DatabaseManager.swift in Sources */,
 				EC245FBD25987AB80057D2EF /* HomeViewController.swift in Sources */,
 				EC24603425987E140057D2EF /* SearchResultViewController.swift in Sources */,
 				EC24600E25987D0F0057D2EF /* LoginViewController.swift in Sources */,
+				EC8F79C6259963550003B24E /* Extensions.swift in Sources */,
 				EC24602F25987E030057D2EF /* SearchViewController.swift in Sources */,
 				EC24600325987C910057D2EF /* ProfileViewController.swift in Sources */,
+				EC8F79A425995C230003B24E /* AuthManager.swift in Sources */,
 				EC245FB925987AB80057D2EF /* AppDelegate.swift in Sources */,
 				EC245FBB25987AB80057D2EF /* SceneDelegate.swift in Sources */,
 				EC24602A25987DE70057D2EF /* ListViewController.swift in Sources */,
@@ -711,6 +735,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -730,6 +755,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
