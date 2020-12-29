@@ -49,24 +49,44 @@ final class SettingViewController: UIViewController {
     }
     
     private func didTapLogOut() {
-        AuthManager.shared.logOut { (success) in
-            DispatchQueue.main.async {
-                if success {
-                    // present log in
-                    let loginVC = LoginViewController()
-                    loginVC.modalPresentationStyle = .fullScreen // so user cannot swipe away
-                    self.present(loginVC, animated: true) {
-                        // Get rid of the setting and switch back to the main tab, so when user log back in again they are back on the home tab rather than on Settings
-                        self.navigationController?.popToRootViewController(animated: false)
-                        self.tabBarController?.selectedIndex = 0
-                    }
-                }
-                else {
-                    // error occured
-                    print("Failed to Signed Out")
-                }
-            }
-        }
+        
+        let actionSheet = UIAlertController(title: "Log Out",
+                                            message: "Are you sure you want to log out?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel,
+                                            handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Log Out",
+                                            style: .destructive,
+                                            handler: { _ in
+                                                // .destructive = red button
+                                                
+                                                // handler: discard the result
+                                                AuthManager.shared.logOut { (success) in
+                                                    DispatchQueue.main.async {
+                                                        if success {
+                                                            // present log in
+                                                            let loginVC = LoginViewController()
+                                                            loginVC.modalPresentationStyle = .fullScreen // so user cannot swipe away
+                                                            self.present(loginVC, animated: true) {
+                                                                // Get rid of the setting and switch back to the main tab, so when user log back in again they are back on the home tab rather than on Settings
+                                                                self.navigationController?.popToRootViewController(animated: false)
+                                                                self.tabBarController?.selectedIndex = 0
+                                                            }
+                                                        }
+                                                        else {
+                                                            // error occured
+                                                            fatalError("Failed to Signed Out")
+                                                        }
+                                                    }
+                                                }
+                                            }))
+        
+        // popoverPresentationController - make sure it doesn't crash on iPad
+        actionSheet.popoverPresentationController?.sourceView = tableView
+        actionSheet.popoverPresentationController?.sourceRect = tableView.bounds
+        
+        present(actionSheet, animated: true)
     }
 }
 
