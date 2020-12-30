@@ -41,6 +41,7 @@
 		EC8F79DE259C44C60003B24E /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79DD259C44C60003B24E /* IGFeedPostHeaderTableViewCell.swift */; };
 		EC8F79E3259C44FF0003B24E /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79E2259C44FF0003B24E /* IGFeedPostActionsTableViewCell.swift */; };
 		EC8F79E8259C453A0003B24E /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79E7259C453A0003B24E /* IGFeedPostGeneralTableViewCell.swift */; };
+		EC8F79F0259C9D570003B24E /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79EF259C9D570003B24E /* FormTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		EC8F79DD259C44C60003B24E /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		EC8F79E2259C44FF0003B24E /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
 		EC8F79E7259C453A0003B24E /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
+		EC8F79EF259C9D570003B24E /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8F79DC259C448D0003B24E /* HomeFeedCells */,
+				EC8F79EF259C9D570003B24E /* FormTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -317,8 +320,8 @@
 		EC8F79DC259C448D0003B24E /* HomeFeedCells */ = {
 			isa = PBXGroup;
 			children = (
-				EC8F79D4259C115D0003B24E /* IGFeedPostTableViewCell.swift */,
 				EC8F79DD259C44C60003B24E /* IGFeedPostHeaderTableViewCell.swift */,
+				EC8F79D4259C115D0003B24E /* IGFeedPostTableViewCell.swift */,
 				EC8F79E2259C44FF0003B24E /* IGFeedPostActionsTableViewCell.swift */,
 				EC8F79E7259C453A0003B24E /* IGFeedPostGeneralTableViewCell.swift */,
 			);
@@ -573,6 +576,7 @@
 				EC8F79DE259C44C60003B24E /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				EC24603925987E480057D2EF /* PostEditorViewController.swift in Sources */,
 				EC8F79A925995C860003B24E /* StorageManager.swift in Sources */,
+				EC8F79F0259C9D570003B24E /* FormTableViewCell.swift in Sources */,
 				EC24601B25987D650057D2EF /* PostViewController.swift in Sources */,
 				EC8F799F25995ABF0003B24E /* DatabaseManager.swift in Sources */,
 				EC245FBD25987AB80057D2EF /* HomeViewController.swift in Sources */,
