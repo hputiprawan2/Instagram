@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol FormTableViewCellDelegate: AnyObject {
+    func formTableViewCell(_ cell: FormTableViewCell, didUpdateField value: EditProfileFormModel)
+}
+
 class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     static let identifier = "FormTableViewCell"
+    
+    private var model: EditProfileFormModel?
+    
+    public weak var delegate: FormTableViewCellDelegate? // don't cause memory leak/retention cycle
     
     private let formLabel: UILabel = {
         let label = UILabel()
@@ -65,6 +73,11 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     // MARK: - Field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        model?.value = textField.text
+        guard let model = model else {
+            return true
+        }
+        delegate?.formTableViewCell(self, didUpdateField: model)
         textField.resignFirstResponder() // dismiss keyboard when user hits return
         return true
     }

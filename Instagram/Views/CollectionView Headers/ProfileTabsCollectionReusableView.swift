@@ -7,6 +7,8 @@
 
 import UIKit
 
+// Tab icons between your posts and tagged photos
 class ProfileTabsCollectionReusableView: UICollectionReusableView {
+    static let identifier = "ProfileTabsCollectionReusableView"
         
 }
