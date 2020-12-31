@@ -18,6 +18,7 @@ target 'Instagram' do
 
 # In app rating
 pod 'Appirater'
+pod 'SDWebImage'
 
 # Firebase
 pod 'Firebase/Core'
