@@ -45,6 +45,7 @@
 		EC8F79F6259DB34D0003B24E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79F5259DB34D0003B24E /* PhotoCollectionViewCell.swift */; };
 		EC8F79FE259DB3FE0003B24E /* ProfileInfoHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F79FD259DB3FE0003B24E /* ProfileInfoHeaderCollectionReusableView.swift */; };
 		EC8F7A03259DB4460003B24E /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F7A02259DB4460003B24E /* ProfileTabsCollectionReusableView.swift */; };
+		EC8F7A21259DD3D10003B24E /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8F7A20259DD3D10003B24E /* models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		EC8F79F5259DB34D0003B24E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8F79FD259DB3FE0003B24E /* ProfileInfoHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		EC8F7A02259DB4460003B24E /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
+		EC8F7A20259DD3D10003B24E /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 		EC245FED25987AEF0057D2EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EC8F7A20259DD3D10003B24E /* models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				EC24600325987C910057D2EF /* ProfileViewController.swift in Sources */,
 				EC8F79A425995C230003B24E /* AuthManager.swift in Sources */,
 				EC245FB925987AB80057D2EF /* AppDelegate.swift in Sources */,
+				EC8F7A21259DD3D10003B24E /* models.swift in Sources */,
 				EC245FBB25987AB80057D2EF /* SceneDelegate.swift in Sources */,
 				EC8F79E3259C44FF0003B24E /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				EC24602A25987DE70057D2EF /* ListViewController.swift in Sources */,
