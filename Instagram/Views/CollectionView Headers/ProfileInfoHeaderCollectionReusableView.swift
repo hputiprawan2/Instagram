@@ -21,6 +21,7 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let postsButton: UIButton = {
         let button = UIButton()
         button.setTitle("Posts", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
@@ -28,6 +29,7 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let followingButton: UIButton = {
         let button = UIButton()
         button.setTitle("Following", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
@@ -35,6 +37,7 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let followersButton: UIButton = {
         let button = UIButton()
         button.setTitle("Followers", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
@@ -42,6 +45,7 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let editProfileButton: UIButton = {
         let button = UIButton()
         button.setTitle("Edit Your Profile", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
