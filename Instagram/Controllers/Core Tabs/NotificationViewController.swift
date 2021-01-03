@@ -12,14 +12,26 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
 
     private let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.isHidden = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
+    
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.hidesWhenStopped = true // when animation stop, automatically hide
+        spinner.tintColor = .label
+        return spinner
+    }()
         
+    private lazy var noNotificationsView = NoNotificationView() // lazy - only instantiates only when it get called
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Notifications" // only set the header title, not bottom icon
         view.backgroundColor = .systemBackground
+        view.addSubview(spinner)
+        spinner.startAnimating()
         view.addSubview(tableView)
         
         tableView.delegate = self
@@ -29,6 +41,19 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        spinner.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        spinner.center = view.center
+    }
+    
+    private func addNoNotificationView() {
+        // Layout only when there is no notification
+        tableView.isHidden = true
+        view.addSubview(tableView)
+        noNotificationsView.frame = CGRect(x: 0,
+                                           y: 0,
+                                           width: view.width/2,
+                                           height: view.width/4)
+        noNotificationsView.center = view.center
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
