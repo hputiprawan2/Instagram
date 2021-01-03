@@ -18,7 +18,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Notifications"
+        navigationItem.title = "Notifications" // only set the header title, not bottom icon
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         
