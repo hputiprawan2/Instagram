@@ -12,8 +12,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
 
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.isHidden = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.isHidden = false
+        tableView.register(NotificationLikeEventTableViewCell.self, forCellReuseIdentifier: NotificationLikeEventTableViewCell.identifier)
+        tableView.register(NotificationFollowEventTableViewCell.self, forCellReuseIdentifier: NotificationFollowEventTableViewCell.identifier)
         return tableView
     }()
     
@@ -26,12 +27,14 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         
     private lazy var noNotificationsView = NoNotificationView() // lazy - only instantiates only when it get called
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Notifications" // only set the header title, not bottom icon
         view.backgroundColor = .systemBackground
         view.addSubview(spinner)
-        spinner.startAnimating()
+//        spinner.startAnimating()
         view.addSubview(tableView)
         
         tableView.delegate = self
