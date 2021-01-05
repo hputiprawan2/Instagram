@@ -156,7 +156,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Header
             switch model.header.renderType {
             case .header(let user):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
                 return cell
             case .actions, .primaryContent, .comments: return UITableViewCell()
             }
@@ -165,7 +165,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Post
             switch model.post.renderType {
             case .primaryContent(let post):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
+                cell.configure(with: post)
                 return cell
             case .header, .actions, .comments: return UITableViewCell()
             }
@@ -174,7 +175,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Actions
             switch model.actions.renderType {
             case .actions(let provider):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
                 return cell
             case .header, .primaryContent, .comments: return UITableViewCell()
             }
@@ -183,7 +184,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Comments
             switch model.commnents.renderType {
             case .comments(let comments):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
                 return cell
             case .header, .actions, .primaryContent: return UITableViewCell()
             }
