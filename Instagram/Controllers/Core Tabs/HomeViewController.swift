@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     }
     
     private func createMockModels() {
-        let user = User(username: "joe",
+        let user = User(username: "@hannap",
                         name: (first: "", last: ""),
                         profilePhoto: URL(string: "https://www.google.com")!,
                         birthDate: Date(),
@@ -156,7 +156,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Header
             switch model.header.renderType {
             case .header(let user):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+                cell.configure(with: user)
+                cell.delegate = self
                 return cell
             case .actions, .primaryContent, .comments: return UITableViewCell()
             }
@@ -165,7 +167,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Post
             switch model.post.renderType {
             case .primaryContent(let post):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
+                cell.configure(with: post)
                 return cell
             case .header, .actions, .comments: return UITableViewCell()
             }
@@ -174,7 +177,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Actions
             switch model.actions.renderType {
             case .actions(let provider):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
+                cell.delegate = self
                 return cell
             case .header, .primaryContent, .comments: return UITableViewCell()
             }
@@ -183,7 +187,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // Comments
             switch model.commnents.renderType {
             case .comments(let comments):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
                 return cell
             case .header, .actions, .primaryContent: return UITableViewCell()
             }
@@ -224,4 +228,37 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let subSection = section % 4
         return subSection == 3 ? 70 : 0
     }
+}
+
+extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate {
+    func didTapMoreButton() {
+        let actionSheet = UIAlertController(title: "Post Options",
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Report", style: .destructive, handler: {[weak self] _ in
+            self?.reportPost()
+        }))
+        present(actionSheet, animated: true)
+    }
+    
+    func reportPost() {
+        
+    }
+}
+
+extension HomeViewController: IGFeedPostActionsTableViewCellDelegate {
+    func didTapLikeButton() {
+        print("like")
+    }
+    
+    func didTapCommentButton() {
+        print("comment")
+    }
+    
+    func didTapSendButton() {
+        print("send")
+    }
+    
+    
 }
