@@ -178,6 +178,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             switch model.actions.renderType {
             case .actions(let provider):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
+                cell.delegate = self
                 return cell
             case .header, .primaryContent, .comments: return UITableViewCell()
             }
@@ -229,7 +230,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate{
+extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate {
     func didTapMoreButton() {
         let actionSheet = UIAlertController(title: "Post Options",
                                             message: nil,
@@ -244,4 +245,20 @@ extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate{
     func reportPost() {
         
     }
+}
+
+extension HomeViewController: IGFeedPostActionsTableViewCellDelegate {
+    func didTapLikeButton() {
+        print("like")
+    }
+    
+    func didTapCommentButton() {
+        print("comment")
+    }
+    
+    func didTapSendButton() {
+        print("send")
+    }
+    
+    
 }
