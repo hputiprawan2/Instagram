@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		1B90AD70A0F177ED4D345719 /* Pods_InstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027406B49CBE646E3B97617A /* Pods_InstagramTests.framework */; };
 		78B6BD9465AC670A13CFED72 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE034F2773563AAC1F47CCF /* Pods_Instagram.framework */; };
+		C78147BF25A44C60001E7A26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC245FBC25987AB80057D2EF /* HomeViewController.swift */; };
 		E024690224DBF7F8061191FA /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B776B3F7FA21B566314FB9E /* Pods_Instagram_InstagramUITests.framework */; };
 		EC245FB925987AB80057D2EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC245FB825987AB80057D2EF /* AppDelegate.swift */; };
 		EC245FBB25987AB80057D2EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC245FBA25987AB80057D2EF /* SceneDelegate.swift */; };
-		EC245FBD25987AB80057D2EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC245FBC25987AB80057D2EF /* HomeViewController.swift */; };
 		EC245FC025987AB80057D2EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC245FBE25987AB80057D2EF /* Main.storyboard */; };
 		EC245FC225987AB90057D2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC245FC125987AB90057D2EF /* Assets.xcassets */; };
 		EC245FC525987AB90057D2EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC245FC325987AB90057D2EF /* LaunchScreen.storyboard */; };
@@ -610,6 +610,7 @@
 				EC24602025987D990057D2EF /* EditProfileViewController.swift in Sources */,
 				EC245FF425987C1F0057D2EF /* ExploreViewController.swift in Sources */,
 				EC24603E25987E770057D2EF /* PublishPostViewController.swift in Sources */,
+				C78147BF25A44C60001E7A26 /* HomeViewController.swift in Sources */,
 				EC245FF925987C520057D2EF /* CameraViewController.swift in Sources */,
 				EC245FFE25987C760057D2EF /* NotificationViewController.swift in Sources */,
 				EC24601625987D320057D2EF /* RegistrationViewController.swift in Sources */,
@@ -622,7 +623,6 @@
 				EC24601B25987D650057D2EF /* PostViewController.swift in Sources */,
 				EC8F7A03259DB4460003B24E /* ProfileTabsCollectionReusableView.swift in Sources */,
 				EC8F799F25995ABF0003B24E /* DatabaseManager.swift in Sources */,
-				EC245FBD25987AB80057D2EF /* HomeViewController.swift in Sources */,
 				EC8F79D5259C115D0003B24E /* IGFeedPostTableViewCell.swift in Sources */,
 				EC8F79F6259DB34D0003B24E /* PhotoCollectionViewCell.swift in Sources */,
 				EC24603425987E140057D2EF /* SearchResultViewController.swift in Sources */,
