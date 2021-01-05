@@ -17,7 +17,8 @@ final class IGFeedPostTableViewCell: UITableViewCell {
     private let postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .secondarySystemBackground
+        imageView.backgroundColor = nil
+        imageView.clipsToBounds = true
         return imageView
     }()
     
