@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     }
     
     private func createMockModels() {
-        let user = User(username: "joe",
+        let user = User(username: "@hannap",
                         name: (first: "", last: ""),
                         profilePhoto: URL(string: "https://www.google.com")!,
                         birthDate: Date(),
@@ -157,6 +157,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             switch model.header.renderType {
             case .header(let user):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+                cell.configure(with: user)
                 return cell
             case .actions, .primaryContent, .comments: return UITableViewCell()
             }
